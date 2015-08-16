@@ -552,7 +552,11 @@ class MatcherCastImpl {
     // Even if T has an implicit constructor from M, it won't be called because
     // creating Matcher<T> would require a chain of two user-defined conversions
     // (first to create T from M and then to create Matcher<T> from T).
-    return polymorphic_matcher_or_value;
+#if defined(_MSC_VER) && (_MSC_VER >= 1900)
+    return ImplicitCast_<Matcher<T>>(polymorphic_matcher_or_value);
+#else
+     return polymorphic_matcher_or_value;
+#endif
   }
 };
 
