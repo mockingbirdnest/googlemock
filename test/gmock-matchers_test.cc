@@ -1042,7 +1042,7 @@ TEST(IsNullTest, ReferenceToConstLinkedPtr) {
   EXPECT_FALSE(m.Matches(non_null_p));
 }
 
-#if GTEST_LANG_CXX11
+#if GTEST_LANG_CXX11 && !defined(_MSC_VER)
 TEST(IsNullTest, StdFunction) {
   const Matcher<std::function<void()>> m = IsNull();
 
@@ -1090,7 +1090,7 @@ TEST(NotNullTest, ReferenceToConstLinkedPtr) {
   EXPECT_TRUE(m.Matches(non_null_p));
 }
 
-#if GTEST_LANG_CXX11
+#if GTEST_LANG_CXX11 && !defined(_MSC_VER)
 TEST(NotNullTest, StdFunction) {
   const Matcher<std::function<void()>> m = NotNull();
 
