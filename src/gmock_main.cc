@@ -30,6 +30,7 @@
 // Author: wan@google.com (Zhanyong Wan)
 
 #include <iostream>
+#include "glog/logging.h"
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
@@ -46,6 +47,7 @@ GTEST_API_ int _tmain(int argc, TCHAR** argv) {
 GTEST_API_ int main(int argc, char** argv) {
 #endif  // GTEST_OS_WINDOWS_MOBILE
   std::cout << "Running main() from gmock_main.cc\n";
+  google::InitGoogleLogging(argv[0]);
   // Since Google Mock depends on Google Test, InitGoogleMock() is
   // also responsible for initializing Google Test.  Therefore there's
   // no need for calling testing::InitGoogleTest() separately.

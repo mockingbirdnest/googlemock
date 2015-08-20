@@ -34,11 +34,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\googletest\msvc\portability_macros.props" />
     <Import Project="..\google_googletest.props" />
+    <Import Project="..\..\..\glog\vsprojects\static_linking.props" />
+    <Import Project="..\google_glog.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\googletest\msvc\portability_macros.props" />
     <Import Project="..\google_googletest.props" />
+    <Import Project="..\..\..\glog\vsprojects\static_linking.props" />
+    <Import Project="..\google_glog.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
